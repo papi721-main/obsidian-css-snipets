@@ -1,0 +1,43 @@
+/* ===============================
+   AMHARIC / GE'EZ READING THEME
+   =============================== */
+
+/* Activate only when note is tagged #amharic */
+.markdown-preview-view:has(.tag[href="#amharic"]),
+.cm-content:has(.tag[href="#amharic"]) {
+
+  font-family: "Noto Sans Ethiopic", "Noto Sans", sans-serif;
+  font-size: 19px;
+  line-height: 1.9;
+
+  letter-spacing: 0.02em;
+  word-spacing: 0.08em;
+
+  color: #e6e6e6;
+  background-color: #121212;
+}
+
+/* Headings */
+.markdown-preview-view:has(.tag[href="#amharic"]) h1,
+.markdown-preview-view:has(.tag[href="#amharic"]) h2,
+.markdown-preview-view:has(.tag[href="#amharic"]) h3 {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-top: 1.8em;
+}
+
+/* Reduce visual noise from highlights */
+.markdown-preview-view:has(.tag[href="#amharic"]) mark {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Code blocks (if any) */
+.markdown-preview-view:has(.tag[href="#amharic"]) code {
+  font-size: 0.95em;
+}
+
+/* Extra breathing room between paragraphs */
+.markdown-preview-view:has(.tag[href="#amharic"]) p {
+  margin-bottom: 1.3em;
+}
+

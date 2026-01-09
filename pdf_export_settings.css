@@ -1,0 +1,28 @@
+/* Avoid any page break after a heading */
+@media print {
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid; /* Fallback for older print engines */
+  }
+}
+
+/* Keep Headings and Text Together:  */
+/* You can use the orphans and widows properties to control how many  */
+/* lines of a paragraph must appear at the top or bottom of a page, which  */
+/* can further refine your page breaks. */
+@media print {
+  p {
+    orphans: 3; /* Minimum lines at the bottom of a page */
+    widows: 3; /* Minimum lines at the top of a page */
+  }
+}
+
+/* @media print { */
+/*   h1 { */
+/*     break-before: always; */
+/*     page-break-before: always; */
+/*   } */
+/*   /* ... other heading rules */ */
+/* } */
+
+

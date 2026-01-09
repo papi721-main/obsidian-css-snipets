@@ -1,0 +1,42 @@
+:root {
+  --global-bg-image: url("https://i.imgur.com/GjBdV1e.png");
+  /* your direct image */
+  --vignette-dark: rgba(0, 0, 0, 0.75);
+  --vignette-mid: rgba(0, 0, 0, 0.45);
+  --blue-tint: rgba(8, 25, 55, 0.65);
+}
+
+/* Apply to app surfaces */
+body,
+/* .workspace, */
+/* .app-container, */
+.workspace-tab-header-container,
+.workspace-ribbon,
+.sidebar-toggle-button,
+.view-content,
+.titlebar-button-container,
+.view-header,
+.nav-header,
+.nav-files-container,
+.workspace-sidedock-vault-profile,
+.workspace-leaf-content,
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-scroller {
+  background-image:
+    radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.45) 35%,
+      var(--vignette-mid) 65%,
+      var(--vignette-dark) 100%),
+    linear-gradient(var(--blue-tint), var(--blue-tint)),
+    linear-gradient(135deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.20) 45%,
+      rgba(0, 0, 0, 0.50) 100%),
+    var(--global-bg-image) !important;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

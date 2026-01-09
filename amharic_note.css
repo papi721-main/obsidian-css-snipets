@@ -1,0 +1,55 @@
+/* 
+   =========================================
+   AMHARIC / GE'EZ READING THEME (per-note)
+   Activate via:
+   ---
+   cssclasses: amharic-note
+   ---
+   =========================================
+ */
+
+/* .metadata-container.amharic-note, */
+/* .markdown-preview-view.amharic-note, */
+/* .markdown-source-view.mod-cm6.amharic-note .cm-content, */
+/* .markdown-source-view.mod-cm6.amharic-note .cm-scroller { */
+/*   color: #373737; */
+/*   background-color: #e6e6e6; */
+/* } */
+
+/* Reading view (preview) and Editor (Live Preview / source) */
+.markdown-preview-view.amharic-note,
+.markdown-source-view.mod-cm6.amharic-note .cm-content,
+.markdown-source-view.mod-cm6.amharic-note .cm-scroller {
+  font-family: "Noto Sans Ethiopic", "Noto Sans", sans-serif;
+  font-size: 19px;
+  line-height: 1.9;
+
+  letter-spacing: 0.01em;
+  word-spacing: 0.07em;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-align: justify;
+}
+
+/* Headings in reading view */
+.markdown-preview-view.amharic-note h1,
+.markdown-preview-view.amharic-note h2,
+.markdown-preview-view.amharic-note h3,
+.markdown-preview-view.amharic-note h4,
+.markdown-preview-view.amharic-note h5,
+.markdown-preview-view.amharic-note h6 {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-top: 1.8em;
+}
+
+/* Paragraph spacing (reading view) */
+.markdown-preview-view.amharic-note p {
+  margin-bottom: 1.3em;
+}
+
+/* Softer highlights */
+.markdown-preview-view.amharic-note mark {
+  background-color: rgba(255, 255, 255, 0.15);
+}

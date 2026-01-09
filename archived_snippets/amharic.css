@@ -1,0 +1,40 @@
+/* .view-content:has(.amharic-font) :is(.cm-line, .markdown-preview-section p) { */
+/*   font-family: "Abyssinica SIL", "Noto Sans" !important; */
+/* } */
+
+
+/* 
+ * Settings to make reading amharic text easier
+ */
+/* .markdown-preview-view, */
+/* .cm-content { */
+/*   line-height: 2; */
+/*   font-size: 19px; */
+/* } */
+
+.markdown-preview-view,
+.cm-content  {
+  font-family: "Noto Sans Ethiopic", "Noto Sans", sans-serif;
+  font-size: 19px;
+  line-height: 1.9;
+
+  letter-spacing: 0.03em;
+  /* word-spacing: 0.08em; */
+}
+
+/* body { */
+/*   font-family: "Noto Sans Ethiopic", "Noto Sans", sans-serif; */
+/*   --text-normal: #e6e6e6; */
+/*   --text-accent: #c8d8c8; */
+/* } */
+
+/* Extra breathing room between paragraphs */
+/* .markdown-preview-view, */
+/* .cm-content p { */
+/*   margin-bottom: 5em; */
+/* } */
+
+/* .theme-light { */
+/*   --background-primary: #f0f0f0; /* Changes the main editor background */ */
+/*   --background-secondary: #e0e0e0; /* Changes sidebar backgrounds */ */
+/* } */
