@@ -36,6 +36,12 @@ img[alt*="left"] {
   text-align: justify;
 }
 
+/* Set a font size for inline code */
+.markdown-preview-view code,
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  font-size: 17px !important;
+}
+
 /* change title font in app header */
 .view-header-title {
   font-family: "Faculty Glyphic", "Noto Sans" !important;
