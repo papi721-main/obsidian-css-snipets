@@ -19,7 +19,7 @@
   }
 }
 
-/* ... other heading rules */
+/* Ensure page breaks before top-level headings */
 /* @media print {
   h1 {
     break-before: always;
