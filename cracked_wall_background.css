@@ -44,3 +44,25 @@ body,
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+@media print {
+
+  /* Remove all backgrounds everywhere */
+  body,
+  .workspace,
+  .app-container,
+  .view-content,
+  .markdown-preview-view,
+  .markdown-source-view,
+  .cm-scroller {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  /* Force clean paper text */
+  body,
+  .markdown-preview-view,
+  .cm-content {
+    color: #242424 !important;
+  }
+}
