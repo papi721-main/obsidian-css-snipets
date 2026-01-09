@@ -1,26 +1,26 @@
 :root {
-  --global-bg-image: url("https://i.imgur.com/GjBdV1e.png");
   /* your direct image */
+  --global-bg-image: url("https://i.imgur.com/GjBdV1e.png");
+
+  /* vignette colors for overlay */
   --vignette-dark: rgba(0, 0, 0, 0.75);
   --vignette-mid: rgba(0, 0, 0, 0.45);
   --blue-tint: rgba(8, 25, 55, 0.65);
 }
 
-/* Apply to app surfaces */
+/* Apply background to main areas */
 body,
-/* .workspace, */
-/* .app-container, */
 .workspace-tab-header-container,
+.workspace-sidedock-vault-profile,
+.workspace-leaf-content,
 .workspace-ribbon,
 .sidebar-toggle-button,
 .status-bar,
-.view-content,
 .titlebar-button-container,
 .view-header,
+.view-content,
 .nav-header,
 .nav-files-container,
-.workspace-sidedock-vault-profile,
-.workspace-leaf-content,
 .markdown-preview-view,
 .markdown-source-view.mod-cm6 .cm-scroller {
   background-image:
