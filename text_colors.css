@@ -167,6 +167,11 @@ body.theme-light {
   color: var(--italic) !important;
 }
 
+.markdown-source-view.mod-cm6 .cm-em.cm-strong {
+  color: var(--bolditalic) !important;
+  font-weight: 700 !important;
+}
+
 /* .markdown-source-view.mod-cm6 .cm-strong.cm-em, */
 /* .markdown-source-view.mod-cm6 .cm-em.cm-strong { */
 /*   color: var(--bolditalic) !important; */
