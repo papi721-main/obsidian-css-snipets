@@ -1,4 +1,4 @@
-/* Settings for alignning images */
+/* Align images based on alt text keywords: "center", "right", "left" */
 img[alt*="center"] {
   display: block;
   margin-left: auto;
@@ -33,4 +33,35 @@ img[alt*="left"] {
   line-height: 1.6em;
   letter-spacing: 0.04em;
   font-size: 18px;
+}
+
+/* change title font in app header */
+.view-header-title {
+  font-family: "Faculty Glyphic", "Noto Sans" !important;
+}
+
+/* change h1 font globally */
+body {
+  --inline-title-font: var(--h1-font);
+  --h1-font: "Faculty Glyphic";
+}
+
+/* change header font in editing view */
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-family: "Faculty Glyphic", "Noto Sans" !important;
+}
+
+/* change header font in reading view */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-family: "Faculty Glyphic", "Noto Sans" !important;
 }
