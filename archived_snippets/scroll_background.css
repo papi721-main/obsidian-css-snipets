@@ -1,0 +1,68 @@
+:root {
+  /* your direct image */
+  --global-bg-image: url("https://imgur.com/XhtCwHH.jpg");
+
+  /* vignette colors for overlay */
+  --vignette-dark: rgba(0, 0, 0, 0.75);
+  --vignette-mid: rgba(0, 0, 0, 0.45);
+  --scroll-tint: rgba(251, 250, 250, 0.0);
+
+  /* alternative darker tint option */
+  /* --blue-tint: rgba(21, 22, 22, 0.65); */
+}
+
+/* Apply background to main areas */
+body.scroll,
+.workspace-tab-header-container.scroll,
+.workspace-sidedock-vault-profile.scroll,
+.workspace-leaf-content.scroll,
+.workspace-ribbon.scroll,
+.sidebar-toggle-button.scroll,
+.status-bar.scroll,
+.titlebar-button-container.scroll,
+.view-header.scroll,
+.view-content.scroll,
+.nav-header.scroll,
+.nav-files-container.scroll,
+.markdown-preview-view.scroll,
+.markdown-source-view.mod-cm6.scroll .cm-scroller {
+  background-image:
+    radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.45) 35%,
+      var(--vignette-mid) 65%,
+      var(--vignette-dark) 100%),
+    linear-gradient(var(--scroll-tint), var(--scroll-tint)),
+    linear-gradient(135deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.20) 45%,
+      rgba(0, 0, 0, 0.50) 100%),
+    var(--global-bg-image) !important;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media print {
+
+  /* Remove all backgrounds everywhere */
+  body,
+  .workspace,
+  .app-container,
+  .view-content,
+  .markdown-preview-view,
+  .markdown-source-view,
+  .cm-scroller {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  /* Force clean paper text */
+  body,
+  .markdown-preview-view,
+  .cm-content {
+    color: #242424 !important;
+  }
+}
