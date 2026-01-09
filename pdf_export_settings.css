@@ -32,39 +32,40 @@
    ========================================= */
 @media print {
 
-  /* Hide actual video content */
-  video,
-  iframe[src*="youtube"],
-  .video-embed,
+  /* 1) Hide the actual media (but keep container visible) */
   .markdown-preview-view iframe[src*="youtube"],
   .markdown-preview-view video {
     display: none !important;
   }
 
-  /* Insert placeholder text */
-  video::before,
-  .video-embed::before,
-  .markdown-preview-view video::before,
-  .markdown-preview-view iframe[src*="youtube"]::before {
-    content: "[ Video content omitted in PDF export ]";
-    display: block;
-
-    margin: 1.5em 0;
-    padding: 0.8em 1em;
-
-    font-style: italic;
-    font-size: 12pt;
-    color: #444;
-
-    border: 1px dashed #999;
-    background: #f9f9f9;
-    text-align: center;
+  /* 2) Show placeholder on common embed containers */
+  .markdown-preview-view .internal-embed.is-loaded:has(iframe[src*="youtube"]),
+  .markdown-preview-view .internal-embed.is-loaded:has(video),
+  .markdown-preview-view .media-embed:has(iframe[src*="youtube"]),
+  .markdown-preview-view .media-embed:has(video),
+  .markdown-preview-view .video-embed {
+    display: block !important;
+    margin: 1.5em 0 !important;
+    padding: 0.8em 1em !important;
+    border: 1px dashed #999 !important;
+    background: #f9f9f9 !important;
+    text-align: center !important;
+    color: #444 !important;
+    font-style: italic !important;
+    font-size: 12pt !important;
   }
 
-}
+  /* Default placeholder text */
+  .markdown-preview-view .internal-embed.is-loaded:has(video)::before,
+  .markdown-preview-view .media-embed:has(video)::before,
+  .markdown-preview-view .video-embed::before {
+    content: "[ Video content omitted in PDF export ]";
+  }
 
-@media print {
-  iframe[src*="youtube"]::before {
+  /* YouTube-specific placeholder text */
+  .markdown-preview-view .internal-embed.is-loaded:has(iframe[src*="youtube"])::before,
+  .markdown-preview-view .media-embed:has(iframe[src*="youtube"])::before {
     content: "[ YouTube video – view in digital document ]";
   }
+
 }
