@@ -6,6 +6,9 @@
   --vignette-dark: rgba(0, 0, 0, 0.75);
   --vignette-mid: rgba(0, 0, 0, 0.45);
   --blue-tint: rgba(8, 25, 55, 0.65);
+
+  /* alternative darker tint option */
+  /* --blue-tint: rgba(21, 22, 22, 0.65); */
 }
 
 /* Apply background to main areas */
