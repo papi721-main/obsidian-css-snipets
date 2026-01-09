@@ -26,3 +26,45 @@
     page-break-before: always;
   }
 } */
+
+/* =========================================
+   PRINT / PDF — VIDEO PLACEHOLDERS
+   ========================================= */
+@media print {
+
+  /* Hide actual video content */
+  video,
+  iframe[src*="youtube"],
+  .video-embed,
+  .markdown-preview-view iframe[src*="youtube"],
+  .markdown-preview-view video {
+    display: none !important;
+  }
+
+  /* Insert placeholder text */
+  video::before,
+  .video-embed::before,
+  .markdown-preview-view video::before,
+  .markdown-preview-view iframe[src*="youtube"]::before {
+    content: "[ Video content omitted in PDF export ]";
+    display: block;
+
+    margin: 1.5em 0;
+    padding: 0.8em 1em;
+
+    font-style: italic;
+    font-size: 12pt;
+    color: #444;
+
+    border: 1px dashed #999;
+    background: #f9f9f9;
+    text-align: center;
+  }
+
+}
+
+@media print {
+  iframe[src*="youtube"]::before {
+    content: "[ YouTube video – view in digital document ]";
+  }
+}
