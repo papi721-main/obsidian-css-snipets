@@ -33,6 +33,7 @@ img[alt*="left"] {
   line-height: 1.6em;
   letter-spacing: 0.04em;
   font-size: 18px;
+  text-align: justify;
 }
 
 /* change title font in app header */
