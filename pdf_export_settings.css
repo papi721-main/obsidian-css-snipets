@@ -2,7 +2,9 @@
 @media print {
   h1, h2, h3, h4, h5, h6 {
     break-after: avoid;
-    page-break-after: avoid; /* Fallback for older print engines */
+
+    /* Fallback for older print engines */
+    page-break-after: avoid;
   }
 }
 
@@ -17,12 +19,10 @@
   }
 }
 
-/* @media print { */
-/*   h1 { */
-/*     break-before: always; */
-/*     page-break-before: always; */
-/*   } */
-/*   /* ... other heading rules */ */
-/* } */
-
-
+/* ... other heading rules */
+/* @media print {
+  h1 {
+    break-before: always;
+    page-break-before: always;
+  }
+} */
