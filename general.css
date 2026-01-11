@@ -36,6 +36,14 @@ img[alt*="left"] {
   text-align: justify;
 }
 
+
+/* Set text alignment for code blocks */
+.markdown-preview-view code,
+.markdown-source-view.mod-cm6 .cm-scroller .cm-embed-block,
+.markdown-source-view.mod-cm6 .cm-scroller .HyperMD-codeblock {
+  text-align: left !important;
+}
+
 /* Set a font size for inline code */
 .markdown-preview-view code,
 .markdown-source-view.mod-cm6 .cm-inline-code {
