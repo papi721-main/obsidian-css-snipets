@@ -1,0 +1,169 @@
+/* =========================================
+   CALLOUT TYPOGRAPHY SYSTEM — STRONG COLOR CODING
+   Headings, Bold, Italic, Title
+   Light + Dark mode
+   ========================================= */
+
+/* ---------- DARK MODE ---------- */
+body.theme-dark {
+  /* Headings */
+
+  /* red */
+  --h1: #d64a4a;
+  /* warm orange */
+  --h2: #ff8f3f;
+  /* amber */
+  --h3: #e3b341;
+  /* rose */
+  /* turquoise */
+  --h4: #2dd4bf;
+  /* lavender */
+  --h5: #a78bfa;
+  /* neutral gray */
+  --h6: #b7bac2;
+
+  /* light grey */
+  --text-normal: #d3d2d2;
+
+  /* Emphasis */
+  --bold: #1ea7ff;
+  /* EXTRA blue (sapphire) */
+  --italic: #7bd389;
+  /* green */
+  --bolditalic: #c084fc;
+  /* warm violet */
+
+  /* Title */
+  --title: #e5e7eb;
+}
+
+/* ---------- LIGHT MODE ---------- */
+body.theme-light {
+  /* Headings */
+  --h1: #b3261e;
+  /* burnt orange */
+  --h2: #c2410c;
+  /* amber/brown */
+  --h3: #8a5b00;
+  /* burnt orange */
+  /* turquoise */
+  --h4: #0f766e;
+  /* rose wine */
+  --h5: #6d28d9;
+  /* purple */
+  --h6: #4b5563;
+
+  /* soft dark grey */
+  --text-normal: #242424;
+  /* Emphasis */
+  --bold: #005fcc;
+  /* strong sapphire blue */
+  --italic: #1f7a4d;
+  /* green */
+  --bolditalic: #7c3aed;
+  /* warm violet */
+
+  /* Title */
+  --title: #1f2937;
+}
+
+
+.markdown-preview-view .callout-content h1,
+.markdown-preview-view .callout-content h2,
+.markdown-preview-view .callout-content h3,
+.markdown-preview-view .callout-content h4,
+.markdown-preview-view .callout-content h5,
+.markdown-preview-view .callout-content h6 {
+  font-weight: 700;
+}
+
+.markdown-preview-view .callout-content h1 {
+  color: var(--h1);
+}
+
+.markdown-preview-view .callout-content h2 {
+  color: var(--h2);
+}
+
+.markdown-preview-view .callout-content h3 {
+  color: var(--h3);
+}
+
+.markdown-preview-view .callout-content h4 {
+  color: var(--h4);
+}
+
+.markdown-preview-view .callout-content h5 {
+  color: var(--h5);
+}
+
+.markdown-preview-view .callout-content h6 {
+  color: var(--h6);
+}
+
+.markdown-preview-view .callout-content strong {
+  color: var(--bold);
+  font-weight: 700;
+}
+
+.markdown-preview-view .callout-content em {
+  color: var(--italic);
+}
+
+.markdown-preview-view .callout-content strong em,
+.markdown-preview-view .callout-content em strong {
+  color: var(--bolditalic);
+  font-weight: 700;
+}
+
+/* =========================================
+   EDITOR — LIVE PREVIEW (CM6) — CALLOUT
+   ========================================= */
+
+.callout-content h1,
+.callout-content h2,
+.callout-content h3,
+.callout-content h4,
+.callout-content h5,
+.callout-content h6 {
+  font-weight: 700;
+}
+
+.callout-content h1 {
+  color: var(--h1);
+}
+
+.callout-content h2 {
+  color: var(--h2);
+}
+
+.callout-content h3 {
+  color: var(--h3);
+}
+
+.callout-content h4 {
+  color: var(--h4);
+}
+
+.callout-content h5 {
+  color: var(--h5);
+}
+
+.callout-content h6 {
+  color: var(--h6);
+}
+
+.callout-content strong {
+  color: var(--bold);
+  font-weight: 700;
+}
+
+.callout-content em {
+  color: var(--italic);
+}
+
+.callout-content strong em,
+.callout-content em strong {
+  color: var(--bolditalic);
+  font-weight: 700;
+}
