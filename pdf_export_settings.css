@@ -1,6 +1,12 @@
 /* Avoid any page break after a heading */
 @media print {
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     break-after: avoid;
 
     /* Fallback for older print engines */
@@ -14,8 +20,11 @@
 /* can further refine your page breaks. */
 @media print {
   p {
-    orphans: 3; /* Minimum lines at the bottom of a page */
-    widows: 3; /* Minimum lines at the top of a page */
+    /* Minimum lines at the bottom of a page */
+    orphans: 3;
+
+    /* Minimum lines at the top of a page */
+    widows: 3;
   }
 }
 
