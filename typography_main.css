@@ -201,11 +201,13 @@ body.theme-light {
 /* Set a general font size and line spacing for notes */
 .markdown-preview-view,
 .markdown-source-view.mod-cm6 .cm-scroller {
-  font-family: "Noto Sans Ethiopic", "Noto Sans", sans-serif;
-  line-height: 1.6em;
-  letter-spacing: 0.04em;
-  font-size: 17px;
-  /* text-align: justify; */
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.8em;
+  letter-spacing: 0.03em;
+  font-size: 18px;
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 
