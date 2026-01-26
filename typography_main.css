@@ -210,19 +210,41 @@ body.theme-light {
   text-rendering: optimizeLegibility;
 }
 
-
-/* Set text alignment for code blocks */
-.markdown-preview-view code,
-.markdown-source-view.mod-cm6 .cm-scroller .cm-embed-block,
-.markdown-source-view.mod-cm6 .cm-scroller .HyperMD-codeblock {
-  text-align: left !important;
-}
+/* ==================================
+ * CODE BLOCK SETTINGS
+ * ================================== */
 
 /* Set a font size for inline code */
 .markdown-preview-view code,
 .markdown-source-view.mod-cm6 .cm-inline-code {
-  font-size: 0.85rem !important;
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace !important;
+  font-size: 0.9rem !important;
 }
+
+
+/**
+ * Hard fix for code blocks in AnuPuccin Theme
+ * The porblem is the code blocks are not using a monospace font
+ * So force a true monospace font in editor code blocks
+ */
+.cm-editor .cm-content pre,
+.cm-editor .cm-content code,
+.cm-editor .HyperMD-codeblock,
+.cm-editor .HyperMD-codeblock * {
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace !important;
+  font-size: 0.9rem !important;
+  /* font-variant-ligatures: none !important; */
+  /* letter-spacing: 0 !important; */
+  /* white-space: nowrap !important; */
+  /* tab-size: 4; */
+  /* overflow-x: scroll; */
+  /* line-height: 1.9em; */
+  /* &::-webkit-scrollbar { */
+  /*   display: none; */
+  /* } */
+}
+
+/* ===================================== */
 
 /* change title font in app header */
 .view-header-title {
