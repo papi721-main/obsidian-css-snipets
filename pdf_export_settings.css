@@ -78,3 +78,29 @@
   }
 
 }
+
+
+/* =========================================
+   AMHARIC / GE'EZ READING THEME (per-note)
+   Activate via:
+   ---
+   cssclasses: amharic-note
+   ---
+   =========================================
+ */
+
+@media print {
+
+  .markdown-preview-view.amharic-note,
+  .markdown-source-view.mod-cm6.amharic-note .cm-content,
+  .markdown-source-view.mod-cm6.amharic-note .cm-scroller {
+    font-family: "Noto Sans Ethiopic", "Noto Sans", sans-serif;
+    font-size: 18px; /* Going above 18px on font-size may cause issues in print */
+    line-height: 1.9;
+    letter-spacing: 0.01em;
+    word-spacing: 0.07em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-align: justify;
+  }
+}
