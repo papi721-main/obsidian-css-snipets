@@ -68,6 +68,12 @@ body.theme-light {
 }
 
 
+.markdown-preview-view .callout-title h1,
+.markdown-preview-view .callout-title h2,
+.markdown-preview-view .callout-title h3,
+.markdown-preview-view .callout-title h4,
+.markdown-preview-view .callout-title h5,
+.markdown-preview-view .callout-title h6,
 .markdown-preview-view .callout-content h1,
 .markdown-preview-view .callout-content h2,
 .markdown-preview-view .callout-content h3,
@@ -77,39 +83,49 @@ body.theme-light {
   font-weight: 700;
 }
 
+.markdown-preview-view .callout-title h1,
 .markdown-preview-view .callout-content h1 {
   color: var(--h1);
 }
 
+.markdown-preview-view .callout-title h2,
 .markdown-preview-view .callout-content h2 {
   color: var(--h2);
 }
 
+.markdown-preview-view .callout-title h3,
 .markdown-preview-view .callout-content h3 {
   color: var(--h3);
 }
 
+.markdown-preview-view .callout-title h4,
 .markdown-preview-view .callout-content h4 {
   color: var(--h4);
 }
 
+.markdown-preview-view .callout-title h5,
 .markdown-preview-view .callout-content h5 {
   color: var(--h5);
 }
 
+.markdown-preview-view .callout-title h6,
 .markdown-preview-view .callout-content h6 {
   color: var(--h6);
 }
 
+.markdown-preview-view .callout-title strong,
 .markdown-preview-view .callout-content strong {
   color: var(--bold);
   font-weight: 700;
 }
 
+.markdown-preview-view .callout-title em,
 .markdown-preview-view .callout-content em {
   color: var(--italic);
 }
 
+.markdown-preview-view .callout-title strong em,
+.markdown-preview-view .callout-title em strong,
 .markdown-preview-view .callout-content strong em,
 .markdown-preview-view .callout-content em strong {
   color: var(--bolditalic);
@@ -120,6 +136,12 @@ body.theme-light {
    EDITOR — LIVE PREVIEW (CM6) — CALLOUT
    ========================================= */
 
+.callout-title h1,
+.callout-title h2,
+.callout-title h3,
+.callout-title h4,
+.callout-title h5,
+.callout-title h6,
 .callout-content h1,
 .callout-content h2,
 .callout-content h3,
@@ -129,39 +151,49 @@ body.theme-light {
   font-weight: 700;
 }
 
+.callout-title h1,
 .callout-content h1 {
   color: var(--h1);
 }
 
+.callout-title h2,
 .callout-content h2 {
   color: var(--h2);
 }
 
+.callout-title h3,
 .callout-content h3 {
   color: var(--h3);
 }
 
+.callout-title h4,
 .callout-content h4 {
   color: var(--h4);
 }
 
+.callout-title h5,
 .callout-content h5 {
   color: var(--h5);
 }
 
+.callout-title h6,
 .callout-content h6 {
   color: var(--h6);
 }
 
+.callout-title strong,
 .callout-content strong {
   color: var(--bold);
   font-weight: 700;
 }
 
+.callout-title em,
 .callout-content em {
   color: var(--italic);
 }
 
+.callout-title strong em,
+.callout-title em strong,
 .callout-content strong em,
 .callout-content em strong {
   color: var(--bolditalic);
