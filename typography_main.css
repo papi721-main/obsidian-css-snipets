@@ -214,11 +214,11 @@ body.theme-light {
  * CODE BLOCK SETTINGS
  * ================================== */
 
-/* Set a font size for inline code */
+/* Set a font family for inline code */
 .markdown-preview-view code,
 .markdown-source-view.mod-cm6 .cm-inline-code {
   font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace !important;
-  font-size: 0.9rem !important;
+  /* font-size: 0.9rem !important; */
 }
 
 
@@ -232,7 +232,7 @@ body.theme-light {
 .cm-editor .HyperMD-codeblock,
 .cm-editor .HyperMD-codeblock * {
   font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace !important;
-  font-size: 0.9rem !important;
+  /* font-size: 0.9rem !important; */
   /* font-variant-ligatures: none !important; */
   /* letter-spacing: 0 !important; */
   /* white-space: nowrap !important; */
