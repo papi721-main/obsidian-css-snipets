@@ -205,7 +205,7 @@ body.theme-light {
   line-height: 1.8em;
   letter-spacing: 0.03em;
   font-size: 18px;
-  text-align: justify;
+  /* text-align: justify; */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
