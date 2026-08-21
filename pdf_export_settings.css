@@ -116,3 +116,46 @@
     text-align: left !important;
   }
 }
+
+/* =========================================
+   PRINT / PDF — FORCE READABLE TEXT COLORS
+   ========================================= */
+
+@media print {
+
+  /* Normal document text */
+  .markdown-preview-view {
+    --text-normal: #242424 !important;
+    --text-muted: #555555 !important;
+    --text-faint: #666666 !important;
+
+    color: #242424 !important;
+  }
+
+  /* Tables */
+  .markdown-preview-view table,
+  .markdown-preview-view thead,
+  .markdown-preview-view tbody,
+  .markdown-preview-view tr,
+  .markdown-preview-view th,
+  .markdown-preview-view td {
+    color: #242424 !important;
+  }
+
+  /* Specifically force table headers */
+  .markdown-preview-view th,
+  .markdown-preview-view thead th {
+    color: #242424 !important;
+  }
+
+  /* LaTeX / MathJax / KaTeX */
+  .markdown-preview-view .math,
+  .markdown-preview-view .math-block,
+  .markdown-preview-view .math-inline,
+  .markdown-preview-view .katex,
+  .markdown-preview-view .katex *,
+  .markdown-preview-view .MathJax,
+  .markdown-preview-view mjx-container {
+    color: #242424 !important;
+  }
+}
