@@ -1,3 +1,50 @@
+/* =========================================
+   PRINT / PDF — FORCE READABLE TEXT COLORS
+   ========================================= */
+@media print {
+
+  body {
+    /* Headings */
+    --h1: #b3261e;
+    --h2: #c2410c;
+    --h3: #8a5b00;
+    --h4: #0f766e;
+    --h5: #6d28d9;
+    --h6: #4b5563;
+
+    /* Normal text */
+    --text-normal: #242424;
+    --text-muted: #555555;
+    --text-faint: #666666;
+
+    /* Emphasis */
+    --bold: #005fcc;
+    --italic: #1f7a4d;
+    --bolditalic: #7c3aed;
+
+    /* Title */
+    --title: #1f2937;
+  }
+
+  .markdown-preview-view {
+    color: var(--text-normal);
+  }
+
+  .markdown-preview-view th,
+  .markdown-preview-view td {
+    color: var(--text-normal) !important;
+  }
+
+  .markdown-preview-view .math,
+  .markdown-preview-view .math-block,
+  .markdown-preview-view .math-inline,
+  .markdown-preview-view .katex,
+  .markdown-preview-view .katex *,
+  .markdown-preview-view mjx-container {
+    color: var(--text-normal) !important;
+  }
+}
+
 /* Avoid any page break after a heading */
 @media print {
 
