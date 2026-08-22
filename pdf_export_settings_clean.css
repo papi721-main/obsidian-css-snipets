@@ -128,61 +128,72 @@
   */
 
 
-  /* ------------------------------------------------------------
-     4. TABLES
-     Fixes pale/white table headers in PDF export.
-     ------------------------------------------------------------ */
-  .markdown-preview-view table,
-  .markdown-rendered table {
-    color: var(--text-normal) !important;
-    background: #ffffff !important;
-    border-collapse: collapse;
-    width: 100%;
-  }
+/* ------------------------------------------------------------
+   4. TABLES
+   Fit wide tables inside printable PDF width.
+   ------------------------------------------------------------ */
 
-  .markdown-preview-view thead,
-  .markdown-rendered thead {
-    display: table-header-group;
-  }
+.markdown-preview-view table,
+.markdown-rendered table {
+  color: var(--text-normal) !important;
+  background: #ffffff !important;
 
-  .markdown-preview-view tfoot,
-  .markdown-rendered tfoot {
-    display: table-footer-group;
-  }
+  border-collapse: collapse !important;
 
-  .markdown-preview-view th,
-  .markdown-preview-view td,
-  .markdown-rendered th,
-  .markdown-rendered td {
-    color: var(--text-normal) !important;
-    background-color: #ffffff !important;
-  }
+  /* Critical for wide tables */
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
 
-  .markdown-preview-view th,
-  .markdown-rendered th {
-    font-weight: 700 !important;
-  }
+  /* Prevent table itself from overflowing page */
+  box-sizing: border-box !important;
+}
 
-  .markdown-preview-view tr,
-  .markdown-rendered tr {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
+.markdown-preview-view thead,
+.markdown-rendered thead {
+  display: table-header-group;
+}
 
-  /* Preserve emphasis colors inside table cells. */
-  .markdown-preview-view th strong,
-  .markdown-preview-view td strong,
-  .markdown-rendered th strong,
-  .markdown-rendered td strong {
-    color: var(--bold) !important;
-  }
+.markdown-preview-view tfoot,
+.markdown-rendered tfoot {
+  display: table-footer-group;
+}
 
-  .markdown-preview-view th em,
-  .markdown-preview-view td em,
-  .markdown-rendered th em,
-  .markdown-rendered td em {
-    color: var(--italic) !important;
-  }
+.markdown-preview-view th,
+.markdown-preview-view td,
+.markdown-rendered th,
+.markdown-rendered td {
+  color: var(--text-normal) !important;
+  background-color: #ffffff !important;
+
+  /* Allow columns to shrink */
+  min-width: 0 !important;
+  max-width: none !important;
+
+  /* Wrap long content instead of widening the table */
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+
+  /* Include padding inside calculated width */
+  box-sizing: border-box !important;
+
+  /* Slightly smaller padding helps wide tables */
+  padding: 0.35em 0.45em !important;
+
+  vertical-align: top;
+}
+
+.markdown-preview-view th,
+.markdown-rendered th {
+  font-weight: 700 !important;
+}
+
+.markdown-preview-view tr,
+.markdown-rendered tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
 
 
   /* ------------------------------------------------------------
