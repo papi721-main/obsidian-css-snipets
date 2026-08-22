@@ -1,0 +1,437 @@
+/* ================================================================
+   OBSIDIAN / BETTER EXPORT PDF — PRINT STYLESHEET
+   Purpose:
+   - Make PDF output independent of the active Obsidian dark/light theme
+   - Preserve the light-mode typography palette in exported PDFs
+   - Fix white table headers and white LaTeX/MathJax/KaTeX output
+   - Improve tables, callouts, code blocks, links, images and page breaks
+   ================================================================ */
+
+@media print {
+
+  /* ------------------------------------------------------------
+     1. PRINT COLOR PALETTE
+     Always export as a light-paper document, even if Obsidian is
+     currently using a dark theme.
+     ------------------------------------------------------------ */
+  body,
+  .markdown-preview-view,
+  .markdown-rendered {
+    --h1: #b3261e;
+    --h2: #c2410c;
+    --h3: #8a5b00;
+    --h4: #0f766e;
+    --h5: #6d28d9;
+    --h6: #4b5563;
+
+    --text-normal: #242424;
+    --text-muted: #555555;
+    --text-faint: #6b7280;
+
+    --bold: #005fcc;
+    --italic: #1f7a4d;
+    --bolditalic: #7c3aed;
+    --title: #1f2937;
+
+    color: var(--text-normal) !important;
+    background: #ffffff !important;
+  }
+
+  /* Keep Chromium/Electron from unnecessarily replacing declared colors. */
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+
+  /* ------------------------------------------------------------
+     2. BASIC TYPOGRAPHY
+     ------------------------------------------------------------ */
+  .markdown-preview-view,
+  .markdown-rendered {
+    color: var(--text-normal) !important;
+  }
+
+  .inline-title {
+    color: var(--title) !important;
+  }
+
+  .markdown-preview-view h1,
+  .markdown-rendered h1 { color: var(--h1) !important; }
+
+  .markdown-preview-view h2,
+  .markdown-rendered h2 { color: var(--h2) !important; }
+
+  .markdown-preview-view h3,
+  .markdown-rendered h3 { color: var(--h3) !important; }
+
+  .markdown-preview-view h4,
+  .markdown-rendered h4 { color: var(--h4) !important; }
+
+  .markdown-preview-view h5,
+  .markdown-rendered h5 { color: var(--h5) !important; }
+
+  .markdown-preview-view h6,
+  .markdown-rendered h6 { color: var(--h6) !important; }
+
+  .markdown-preview-view strong,
+  .markdown-rendered strong {
+    color: var(--bold) !important;
+    font-weight: 700;
+  }
+
+  .markdown-preview-view em,
+  .markdown-rendered em {
+    color: var(--italic) !important;
+  }
+
+  .markdown-preview-view strong em,
+  .markdown-preview-view em strong,
+  .markdown-rendered strong em,
+  .markdown-rendered em strong {
+    color: var(--bolditalic) !important;
+    font-weight: 700;
+  }
+
+
+  /* ------------------------------------------------------------
+     3. PAGE-BREAK CONTROL
+     ------------------------------------------------------------ */
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Avoid splitting compact objects where practical. */
+  pre,
+  blockquote,
+  figure,
+  img,
+  .callout,
+  .math-block,
+  mjx-container[display="true"] {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Optional: uncomment if every H1 should begin on a fresh page. */
+  /*
+  h1 {
+    break-before: page;
+    page-break-before: always;
+  }
+  */
+
+
+  /* ------------------------------------------------------------
+     4. TABLES
+     Fixes pale/white table headers in PDF export.
+     ------------------------------------------------------------ */
+  .markdown-preview-view table,
+  .markdown-rendered table {
+    color: var(--text-normal) !important;
+    background: #ffffff !important;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .markdown-preview-view thead,
+  .markdown-rendered thead {
+    display: table-header-group;
+  }
+
+  .markdown-preview-view tfoot,
+  .markdown-rendered tfoot {
+    display: table-footer-group;
+  }
+
+  .markdown-preview-view th,
+  .markdown-preview-view td,
+  .markdown-rendered th,
+  .markdown-rendered td {
+    color: var(--text-normal) !important;
+    background-color: #ffffff !important;
+  }
+
+  .markdown-preview-view th,
+  .markdown-rendered th {
+    font-weight: 700 !important;
+  }
+
+  .markdown-preview-view tr,
+  .markdown-rendered tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Preserve emphasis colors inside table cells. */
+  .markdown-preview-view th strong,
+  .markdown-preview-view td strong,
+  .markdown-rendered th strong,
+  .markdown-rendered td strong {
+    color: var(--bold) !important;
+  }
+
+  .markdown-preview-view th em,
+  .markdown-preview-view td em,
+  .markdown-rendered th em,
+  .markdown-rendered td em {
+    color: var(--italic) !important;
+  }
+
+
+  /* ------------------------------------------------------------
+     5. LATEX / KATEX / MATHJAX
+     Fixes equations inheriting a dark-theme light/white color.
+     ------------------------------------------------------------ */
+  .markdown-preview-view .math,
+  .markdown-preview-view .math-block,
+  .markdown-preview-view .math-inline,
+  .markdown-preview-view .katex,
+  .markdown-preview-view .katex *,
+  .markdown-preview-view mjx-container,
+  .markdown-preview-view .MathJax,
+  .markdown-rendered .math,
+  .markdown-rendered .math-block,
+  .markdown-rendered .math-inline,
+  .markdown-rendered .katex,
+  .markdown-rendered .katex *,
+  .markdown-rendered mjx-container,
+  .markdown-rendered .MathJax {
+    color: var(--text-normal) !important;
+  }
+
+  /* MathJax SVG output may use fill/stroke rather than CSS text color. */
+  mjx-container[jax="SVG"] svg,
+  mjx-container[jax="SVG"] g,
+  mjx-container[jax="SVG"] path {
+    color: var(--text-normal) !important;
+    fill: currentColor !important;
+  }
+
+  mjx-container[jax="SVG"] line,
+  mjx-container[jax="SVG"] rect,
+  mjx-container[jax="SVG"] polygon,
+  mjx-container[jax="SVG"] polyline {
+    stroke: currentColor !important;
+  }
+
+
+  /* ------------------------------------------------------------
+     6. LINKS
+     Keep links readable on paper. URLs themselves are not appended.
+     ------------------------------------------------------------ */
+  .markdown-preview-view a,
+  .markdown-rendered a {
+    color: #005fcc !important;
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.12em;
+  }
+
+  .markdown-preview-view a.internal-link,
+  .markdown-rendered a.internal-link {
+    color: #005fcc !important;
+  }
+
+
+  /* ------------------------------------------------------------
+     7. CODE
+     ------------------------------------------------------------ */
+  .markdown-preview-view code,
+  .markdown-preview-view pre,
+  .markdown-rendered code,
+  .markdown-rendered pre {
+    color: #242424 !important;
+  }
+
+  .markdown-preview-view :not(pre) > code,
+  .markdown-rendered :not(pre) > code {
+    background: #f3f4f6 !important;
+  }
+
+  .markdown-preview-view pre,
+  .markdown-rendered pre {
+    background: #f7f7f8 !important;
+    border: 1px solid #d1d5db !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere;
+  }
+
+  /* Syntax highlighters often bring dark-theme foreground colors. */
+  .markdown-preview-view pre *,
+  .markdown-rendered pre * {
+    text-shadow: none !important;
+  }
+
+
+  /* ------------------------------------------------------------
+     8. BLOCKQUOTES
+     ------------------------------------------------------------ */
+  .markdown-preview-view blockquote,
+  .markdown-rendered blockquote {
+    color: #374151 !important;
+    border-color: #9ca3af !important;
+    background: transparent !important;
+  }
+
+
+  /* ------------------------------------------------------------
+     9. CALLOUTS
+     Preserve callout backgrounds/borders, but force readable text.
+     ------------------------------------------------------------ */
+  .markdown-preview-view .callout,
+  .markdown-rendered .callout {
+    color: var(--text-normal) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .markdown-preview-view .callout-title,
+  .markdown-preview-view .callout-content,
+  .markdown-rendered .callout-title,
+  .markdown-rendered .callout-content {
+    color: var(--text-normal) !important;
+  }
+
+  .markdown-preview-view .callout-title strong,
+  .markdown-preview-view .callout-content strong,
+  .markdown-rendered .callout-title strong,
+  .markdown-rendered .callout-content strong {
+    color: var(--bold) !important;
+  }
+
+  .markdown-preview-view .callout-title em,
+  .markdown-preview-view .callout-content em,
+  .markdown-rendered .callout-title em,
+  .markdown-rendered .callout-content em {
+    color: var(--italic) !important;
+  }
+
+  .markdown-preview-view .callout-title strong em,
+  .markdown-preview-view .callout-title em strong,
+  .markdown-preview-view .callout-content strong em,
+  .markdown-preview-view .callout-content em strong,
+  .markdown-rendered .callout-title strong em,
+  .markdown-rendered .callout-title em strong,
+  .markdown-rendered .callout-content strong em,
+  .markdown-rendered .callout-content em strong {
+    color: var(--bolditalic) !important;
+  }
+
+
+  /* ------------------------------------------------------------
+     10. IMAGES / EMBEDS
+     ------------------------------------------------------------ */
+  .markdown-preview-view img,
+  .markdown-rendered img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Hide actual video media in print. */
+  .markdown-preview-view iframe[src*="youtube"],
+  .markdown-preview-view video,
+  .markdown-rendered iframe[src*="youtube"],
+  .markdown-rendered video {
+    display: none !important;
+  }
+
+  /* Video placeholders. */
+  .markdown-preview-view .internal-embed.is-loaded:has(iframe[src*="youtube"]),
+  .markdown-preview-view .internal-embed.is-loaded:has(video),
+  .markdown-preview-view .media-embed:has(iframe[src*="youtube"]),
+  .markdown-preview-view .media-embed:has(video),
+  .markdown-preview-view .video-embed,
+  .markdown-rendered .internal-embed.is-loaded:has(iframe[src*="youtube"]),
+  .markdown-rendered .internal-embed.is-loaded:has(video),
+  .markdown-rendered .media-embed:has(iframe[src*="youtube"]),
+  .markdown-rendered .media-embed:has(video),
+  .markdown-rendered .video-embed {
+    display: block !important;
+    margin: 1.5em 0 !important;
+    padding: 0.8em 1em !important;
+    border: 1px dashed #999 !important;
+    background: #f9f9f9 !important;
+    text-align: center !important;
+    color: #444 !important;
+    font-style: italic !important;
+    font-size: 12pt !important;
+  }
+
+  .markdown-preview-view .internal-embed.is-loaded:has(video)::before,
+  .markdown-preview-view .media-embed:has(video)::before,
+  .markdown-preview-view .video-embed::before,
+  .markdown-rendered .internal-embed.is-loaded:has(video)::before,
+  .markdown-rendered .media-embed:has(video)::before,
+  .markdown-rendered .video-embed::before {
+    content: "[ Video content omitted in PDF export ]";
+  }
+
+  .markdown-preview-view .internal-embed.is-loaded:has(iframe[src*="youtube"])::before,
+  .markdown-preview-view .media-embed:has(iframe[src*="youtube"])::before,
+  .markdown-rendered .internal-embed.is-loaded:has(iframe[src*="youtube"])::before,
+  .markdown-rendered .media-embed:has(iframe[src*="youtube"])::before {
+    content: "[ YouTube video – view in digital document ]";
+  }
+
+
+  /* ------------------------------------------------------------
+     11. HORIZONTAL RULES
+     ------------------------------------------------------------ */
+  .markdown-preview-view hr,
+  .markdown-rendered hr {
+    border: 0;
+    border-top: 1px solid #9ca3af !important;
+    background: transparent !important;
+  }
+
+
+  /* ------------------------------------------------------------
+     12. AMHARIC / GE'EZ PER-NOTE PRINT STYLE
+     Activate in frontmatter with:
+       cssclasses: amharic-note
+     ------------------------------------------------------------ */
+  .markdown-preview-view.amharic-note,
+  .markdown-rendered.amharic-note,
+  .amharic-note .markdown-preview-view,
+  .amharic-note.markdown-rendered {
+    font-family: "Noto Sans Ethiopic", "Noto Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.9;
+    letter-spacing: 0.01em;
+    word-spacing: 0.07em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-align: justify;
+  }
+
+  .markdown-preview-view.amharic-note h1,
+  .markdown-preview-view.amharic-note h2,
+  .markdown-preview-view.amharic-note h3,
+  .markdown-preview-view.amharic-note h4,
+  .markdown-preview-view.amharic-note h5,
+  .markdown-preview-view.amharic-note h6,
+  .markdown-rendered.amharic-note h1,
+  .markdown-rendered.amharic-note h2,
+  .markdown-rendered.amharic-note h3,
+  .markdown-rendered.amharic-note h4,
+  .markdown-rendered.amharic-note h5,
+  .markdown-rendered.amharic-note h6,
+  .amharic-note .markdown-preview-view h1,
+  .amharic-note .markdown-preview-view h2,
+  .amharic-note .markdown-preview-view h3,
+  .amharic-note .markdown-preview-view h4,
+  .amharic-note .markdown-preview-view h5,
+  .amharic-note .markdown-preview-view h6 {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-top: 1.8em;
+    text-align: left !important;
+  }
+}
